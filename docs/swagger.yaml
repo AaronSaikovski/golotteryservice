@@ -1,0 +1,38 @@
+basePath: /
+host: localhost:8080
+info:
+  contact:
+    name: Aaron Saikovski
+  description: An example template of a Golang simple backend API using Fiber
+  license:
+    name: MIT
+  title: go-api-starter
+  version: "0.1"
+paths:
+  /ping:
+    get:
+      consumes:
+      - '*/*'
+      description: get the status of server.
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+      summary: Show the status of server - Ping/Pong
+      tags:
+      - health
+  /weatherforecast:
+    get:
+      consumes:
+      - '*/*'
+      description: Sample random weatherforecast data
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+      summary: Sample weatherforecast
+      tags:
+      - weather
+swagger: "2.0"
