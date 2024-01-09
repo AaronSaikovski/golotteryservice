@@ -5,7 +5,6 @@
 A WebApi using the Go Fiber webframework to generate lottery numbers for use in various lottery games - written in 100% Go.
 
 [![Build Status](https://github.com/AaronSaikovski/golotteryservice/workflows/build/badge.svg)](https://github.com/AaronSaikovski/golotteryservice/actions)
-[![Licence](https://img.shields.io/github/license/AaronSaikovski/golotteryservice)](LICENSE)
 
 </div>
 
