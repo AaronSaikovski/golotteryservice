@@ -1,14 +1,14 @@
 <div align="center">
 
-# GoLang API Starter Template - v0.2
+# golotteryservice
 
-A simple Golang API project template to save you time and energy.
+A WebApi using the Go Fiber webframework to generate lottery numbers for use in various lottery games - written in 100% Go.
 
-[![Build Status](https://github.com/AaronSaikovski/go-api-starter/workflows/build/badge.svg)](https://github.com/AaronSaikovski/go-api-starter/actions)
+[![Build Status](https://github.com/AaronSaikovski/golotteryservice](https://github.com/AaronSaikovski/golotteryservice)/workflows/build/badge.svg)](https://github.com/AaronSaikovski/golotteryservice/actions)
+[![Coverage Status](https://coveralls.io/repos/github/AaronSaikovski/golotteryservice/badge.svg?branch=main)](https://coveralls.io/github/AaronSaikovski/golotteryservice?branch=main)
+[![Licence](https://img.shields.io/github/license/AaronSaikovski/golotteryservice)](LICENSE)
 
 </div>
-
-A simple GoLang WebAPI boilerplate project to accelerate Golang projects. Originally based on [this](https://github.com/bmdavis419/the-better-backend) template. Full Credit to [Ben Davis](twitter.com/bmdavis419)
 
 ## This project contains:
 
@@ -20,36 +20,11 @@ A simple GoLang WebAPI boilerplate project to accelerate Golang projects. Origin
 - Container support with [docker](Dockerfile) and [docker-compose](docker-compose.yml)
 - API key validation - https://docs.gofiber.io/api/middleware/keyauth/
 
-## Install
+## Installation
 
-Click the [Use this template](https://github.com/AaronSaikovski/go-api-starte/generate) button at the top of this project's GitHub page to get started.
+The toolchain is mainly driven by the Makefile.
 
-## Usage
-
-### Setup configuration
-
-1. Configure the `go.mod` file and replace `module github.com/AaronSaikovski/go-api-starter` with your specific project url.
-2. Configure the `Makefile` targets and parameters
-3. Update the name in the `LICENSE` or swap it out entirely
-4. Configure the `.github/workflows/build.yml` file
-5. Update the `CHANGELOG.md` with your own info
-6. Rename other files/folders as needed and configure their content
-7. Delete this `README` and rename `README_project.md` to `README.md`
-8. Run `go mod tidy` to ensure all the modules and packages are in place.
-9. The build process is run from the `Makefile` and to test the project is working type: `make run` and check the console for output.
-
-View swagger docs at http://localhost:8080/swagger
-
-### Extra packages
-
-1. AIR server (supports hot reload) - `go install github.com/cosmtrek/air@latest`
-2. Swagger - `go install github.com/swaggo/swag/cmd/swag@latest`
-
-### Build and run
-
-#### run `make help` for more assistance on the make file.
-
-```
+```bash
 help          - Display help about make targets for this Makefile
 localrelease  - Builds the project in preparation for (local)release
 docs          - updates the swagger docs
@@ -66,6 +41,39 @@ lint          - format code and tidy modules
 depupdate     - Update dependencies
 ```
 
+## Setup/Configuration
+
+This API is secured via an API key which is set in the .env file and is passed in the request header to the API as `XApiKey`. Make sure to not commit the key to your public repository.
+Refer to the file `.env.example` for help. You will need to set this prior to running the API, otherwise you will get this error. `missing or malformed API Key`.
+
+## Usage
+
+From the command line the usage is pretty simple:
+All values are integers unless specified.
+
+```bash
+make run
+curl http://localhost:8080/lottery?maxgames='<Max games value>'&randnum='<Random number value>;&maxnumspergame='<Max numbers per game value>'
+
+```
+
+Results will be returned as JSON
+
+```json
+[
+  "Game: 1 - [87 90 56 7 37 4 71]",
+  "Game: 2 - [90 88 47 84 45 23 32]",
+  "Game: 3 - [76 26 38 43 18 1 30]",
+  "Game: 4 - [28 90 64 81 60 44 76]",
+  "Game: 5 - [71 58 30 13 19 20 40]",
+  "Game: 6 - [83 51 87 3 7 19 88]",
+  "Game: 7 - [76 26 32 39 79 53 66]",
+  "Game: 8 - [85 61 32 17 34 21 48]",
+  "Game: 9 - [55 70 9 59 86 45 54]",
+  "Game: 10 - [36 32 7 2 16 73 58]"
+]
+```
+
 ### Docker Support
 
 This project has been fully tested with Docker and includes a `Dockerfile` and a `docker-compose.yml` file and uses a multi-stage docker file to reduce the docker image to approx. 30MB.
@@ -73,13 +81,13 @@ The docker build process also optimises the Go executable down to a bare minimum
 To build the docker image type:
 
 ```
-docker build -t golangapi:1.0.0 .
+docker build -t golotteryservice:1.0.0 .
 ```
 
 and to run the comtainer type:
 
 ```
-docker run -p 8080:8080 golangapigolangapi:1.0.0
+docker run -p 8080:8080 golotteryservice:1.0.0
 ```
 
 or you can streamline the container build and run process by typing:
@@ -94,17 +102,10 @@ and to tear it down type:
 docker compose down
 ```
 
-### Issues
+## Issues
 
-Please report any issues [here](https://github.com/AaronSaikovski/go-api-starter/issues).
+Please feel free to lodge an [issue or pull request on GitHub](https://github.com/AaronSaikovski/golotteryservice/issues).
 
-## References
+## Known Issues/Bugs
 
-- [The Better backend](https://github.com/bmdavis419/the-better-backend)
-- [Golang project Layout](https://github.com/golang-standards/project-layout)
-- [The one-and-only, must-have, eternal Go project layout](https://appliedgo.com/blog/go-project-layout)
-- [How To Upgrade Golang Dependencies](https://golang.cafe/blog/how-to-upgrade-golang-dependencies.html)
-
-## Credits
-
-[Ben Davis](https://twitter.com/bmdavis419) - [The better backend](https://github.com/bmdavis419/the-better-backend)
+- None at this stage

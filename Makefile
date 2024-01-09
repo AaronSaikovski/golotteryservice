@@ -1,7 +1,7 @@
 # Define Go command and flags
 GO = go
 GOFLAGS = -ldflags="-s -w"
-TARGET = go-api-starter
+TARGET = golotteryservice
 MAINAPPPATH = ./main.go
 
 ## help - Display help about make targets for this Makefile

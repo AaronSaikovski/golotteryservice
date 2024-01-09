@@ -4,7 +4,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/swagger"
 
-	_ "github.com/AaronSaikovski/go-api-starter/docs"
+	_ "github.com/AaronSaikovski/golotteryservice/docs"
 )
 
 func AddSwaggerRoutes(app *fiber.App) {

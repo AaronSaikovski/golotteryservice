@@ -1,6 +1,6 @@
 ﻿services:
-  go-api-starter:
-    image: go-api-starter
+  golotteryservice:
+    image: golotteryservice
     build:
       context: .
       dockerfile: Dockerfile

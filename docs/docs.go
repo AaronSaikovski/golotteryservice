@@ -20,6 +20,26 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/lottery": {
+            "get": {
+                "description": "Generates the lottery numbers and returns JSON - The request responds to a url matching:  /lottery?maxgames=XX\u0026randnum=XX\u0026maxnumspergame=XX",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": [
+                    "Lottery"
+                ],
+                "summary": "Lottery number generator",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
         "/ping": {
             "get": {
                 "description": "get the status of server.",
@@ -39,26 +59,6 @@ const docTemplate = `{
                     }
                 }
             }
-        },
-        "/weatherforecast": {
-            "get": {
-                "description": "Sample random weatherforecast data",
-                "consumes": [
-                    "*/*"
-                ],
-                "produces": [
-                    "text/plain"
-                ],
-                "tags": [
-                    "weather"
-                ],
-                "summary": "Sample weatherforecast",
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    }
-                }
-            }
         }
     }
 }`
@@ -69,8 +69,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:8080",
 	BasePath:         "/",
 	Schemes:          []string{},
-	Title:            "go-api-starter",
-	Description:      "An example template of a Golang simple backend API using Fiber",
+	Title:            "golotteryservice",
+	Description:      "A random lottery generator API using Go & Fiber",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

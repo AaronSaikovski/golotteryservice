@@ -5,9 +5,9 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/AaronSaikovski/go-api-starter/config"
-	"github.com/AaronSaikovski/go-api-starter/middleware"
-	"github.com/AaronSaikovski/go-api-starter/router"
+	"github.com/AaronSaikovski/golotteryservice/config"
+	"github.com/AaronSaikovski/golotteryservice/middleware"
+	"github.com/AaronSaikovski/golotteryservice/router"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/keyauth"

@@ -3,12 +3,26 @@ host: localhost:8080
 info:
   contact:
     name: Aaron Saikovski
-  description: An example template of a Golang simple backend API using Fiber
+  description: A random lottery generator API using Go & Fiber
   license:
     name: MIT
-  title: go-api-starter
+  title: golotteryservice
   version: "0.1"
 paths:
+  /lottery:
+    get:
+      consumes:
+      - '*/*'
+      description: 'Generates the lottery numbers and returns JSON - The request responds
+        to a url matching:  /lottery?maxgames=XX&randnum=XX&maxnumspergame=XX'
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+      summary: Lottery number generator
+      tags:
+      - Lottery
   /ping:
     get:
       consumes:
@@ -22,17 +36,4 @@ paths:
       summary: Show the status of server - Ping/Pong
       tags:
       - health
-  /weatherforecast:
-    get:
-      consumes:
-      - '*/*'
-      description: Sample random weatherforecast data
-      produces:
-      - text/plain
-      responses:
-        "200":
-          description: OK
-      summary: Sample weatherforecast
-      tags:
-      - weather
 swagger: "2.0"

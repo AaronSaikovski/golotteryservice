@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "An example template of a Golang simple backend API using Fiber",
-        "title": "go-api-starter",
+        "description": "A random lottery generator API using Go \u0026 Fiber",
+        "title": "golotteryservice",
         "contact": {
             "name": "Aaron Saikovski"
         },
@@ -14,6 +14,26 @@
     "host": "localhost:8080",
     "basePath": "/",
     "paths": {
+        "/lottery": {
+            "get": {
+                "description": "Generates the lottery numbers and returns JSON - The request responds to a url matching:  /lottery?maxgames=XX\u0026randnum=XX\u0026maxnumspergame=XX",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "text/plain"
+                ],
+                "tags": [
+                    "Lottery"
+                ],
+                "summary": "Lottery number generator",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
         "/ping": {
             "get": {
                 "description": "get the status of server.",
@@ -27,26 +47,6 @@
                     "health"
                 ],
                 "summary": "Show the status of server - Ping/Pong",
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    }
-                }
-            }
-        },
-        "/weatherforecast": {
-            "get": {
-                "description": "Sample random weatherforecast data",
-                "consumes": [
-                    "*/*"
-                ],
-                "produces": [
-                    "text/plain"
-                ],
-                "tags": [
-                    "weather"
-                ],
-                "summary": "Sample weatherforecast",
                 "responses": {
                     "200": {
                         "description": "OK"

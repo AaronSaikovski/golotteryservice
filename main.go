@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/AaronSaikovski/go-api-starter/app"
-	_ "github.com/AaronSaikovski/go-api-starter/docs"
+	"github.com/AaronSaikovski/golotteryservice/app"
+	_ "github.com/AaronSaikovski/golotteryservice/docs"
 )
 
-// @title go-api-starter
+// @title golotteryservice
 // @version 0.1
-// @description An example template of a Golang simple backend API using Fiber
+// @description A random lottery generator API using Go & Fiber
 // @contact.name Aaron Saikovski
 // @license.name MIT
 // @host localhost:8080

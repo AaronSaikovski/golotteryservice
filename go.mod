@@ -1,4 +1,4 @@
-module github.com/AaronSaikovski/go-api-starter
+module github.com/AaronSaikovski/golotteryservice
 
 go 1.21.5
 
