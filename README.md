@@ -4,8 +4,7 @@
 
 A WebApi using the Go Fiber webframework to generate lottery numbers for use in various lottery games - written in 100% Go.
 
-[![Build Status](https://github.com/AaronSaikovski/golotteryservice](https://github.com/AaronSaikovski/golotteryservice)/workflows/build/badge.svg)](https://github.com/AaronSaikovski/golotteryservice/actions)
-[![Coverage Status](https://coveralls.io/repos/github/AaronSaikovski/golotteryservice/badge.svg?branch=main)](https://coveralls.io/github/AaronSaikovski/golotteryservice?branch=main)
+[![Build Status](https://github.com/AaronSaikovski/golotteryservice/workflows/build/badge.svg)](https://github.com/AaronSaikovski/golotteryservice/actions)
 [![Licence](https://img.shields.io/github/license/AaronSaikovski/golotteryservice)](LICENSE)
 
 </div>
@@ -53,11 +52,11 @@ All values are integers unless specified.
 
 ```bash
 make run
-curl http://localhost:8080/lottery?maxgames='<Max games value>'&randnum='<Random number value>;&maxnumspergame='<Max numbers per game value>'
 
+curl http://localhost:8080/lottery?maxgames='<Max games value>'&randnum='<Random number value>;&maxnumspergame='<Max numbers per game value>'
 ```
 
-Results will be returned as JSON
+Results will be returned as JSON, for example:
 
 ```json
 [
