@@ -6,11 +6,9 @@ import (
 	"strconv"
 
 	"github.com/AaronSaikovski/golotteryservice/config"
-	"github.com/AaronSaikovski/golotteryservice/middleware"
 	"github.com/AaronSaikovski/golotteryservice/router"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/gofiber/fiber/v2/middleware/keyauth"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/rs/zerolog"
@@ -61,10 +59,10 @@ func SetupAndRunApp() error {
 	app := fiber.New()
 
 	// Uses API key header - 'XApiKey'
-	app.Use(keyauth.New(keyauth.Config{
-		KeyLookup: "header:XApiKey",
-		Validator: middleware.ValidateAPIKey,
-	}))
+	// app.Use(keyauth.New(keyauth.Config{
+	// 	KeyLookup: "header:XApiKey",
+	// 	Validator: middleware.ValidateAPIKey,
+	// }))
 
 	// attach middleware
 	app.Use(recover.New())

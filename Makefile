@@ -45,6 +45,7 @@ unittest:
 dep:
 	go mod tidy
 	go mod download
+	go get -u ./...
 
 ## vet - Vet examines Go source code and reports suspicious constructs
 vet:
