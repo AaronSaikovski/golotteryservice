@@ -84,7 +84,11 @@ func SetupAndRunApp() error {
 
 	// get the port and start
 	port := os.Getenv("PORT")
-	app.Listen(":" + port)
+	err := app.Listen(":" + port)
+
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
